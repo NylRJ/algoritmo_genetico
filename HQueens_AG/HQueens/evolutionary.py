@@ -38,3 +38,22 @@ class Evolutionary:
         self._parents.append(self.population[parent2_index][0])
 
         return self._parents
+
+
+def crossing(self, parents=None, separation=None, mutation=0.1):
+    """
+    Making the selection of parents
+    :param parents: Parents for the crossing process
+    :param separation: Determines the exact cutoff point of part of the chromosome
+    :param mutation: Percentage of mutated parents
+    :return: returns the son of this cross
+    """
+    # parent selection
+    if parents is None:
+        parents = self.getParents()
+
+    child = np.concatenate(parents[0][0:separation], parents[1][separation:parents[1]])
+
+    return child
+
+
