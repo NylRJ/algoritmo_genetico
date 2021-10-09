@@ -54,5 +54,10 @@ class Evolutionary:
             parents = self.getParents()
 
         child = np.concatenate(parents[0][0:separation], parents[1][separation:parents[1]])
+        # Mutation process
+        if np.random.rand() <= mutation:
+            position = np.ramdom.randint(child.size)
+            value = np.random.randint(1, 9, size=1)[0]
+            child[position] = value
 
         return child
