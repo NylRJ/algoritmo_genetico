@@ -41,7 +41,6 @@ class Evolutionary:
 
         return self._parents
 
-
     def crossing(self, parents=None, separation=None, mutation=0.1):
         """
         Making the selection of parents
@@ -57,5 +56,3 @@ class Evolutionary:
         child = np.concatenate(parents[0][0:separation], parents[1][separation:parents[1]])
 
         return child
-
-
