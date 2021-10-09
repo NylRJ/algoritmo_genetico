@@ -7,6 +7,7 @@ class Evolutionary:
     def __init__(self, pop_size=10, population=None):
 
         self._parents = []
+
         if population is None:
             # gera a população localmente
             self.pop_size = pop_size
@@ -31,6 +32,7 @@ class Evolutionary:
         return np.array(fitness_normalized)
 
     def getParents(self):
+
         parent1_index = np.random.choice(list(range(0, self.pop_size)), 1, p=self.getFitness())
         parent2_index = np.random.choice(list(range(0, self.pop_size)), 1, p=self.getFitness())
 
@@ -38,4 +40,3 @@ class Evolutionary:
         self._parents.append(self.population[parent2_index][0])
 
         return self._parents
-
